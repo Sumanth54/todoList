@@ -15,8 +15,23 @@
   color: yellowgreen;
   font-size: 60px ;
 }
+#addingtolistButton,#addingtolist{
+  display: inline;
+  margin: 10px;
+  display: inline ;
+}
 
-nav {
+
+nav{
+  border: 2px solid black;
+  margin: auto;
+  padding: auto;
+  display: inline ;
+  display: grid;
+
+}
+
+#container{
   border: 2px solid black;
   margin: 10px;
   padding: 10px;
@@ -24,8 +39,15 @@ nav {
 
   </style>
 </head>
-<div id="heading">TODO LIST</div>
-<nav>hi</nav>
+<div id="heading">An interactive to-do list </div>
+<nav>
+  <input type="text" id="addingtolist"  placeholder="enter the things to do"/>
+<button onclick="addingtolist()" id="addingtolistButton" > Add TO DO</button>
+</nav>
+
+
+
+
 
 <body>
 
