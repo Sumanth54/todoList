@@ -4,13 +4,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <title>TODO LIST</title>
   <style>
+    * {
+  box-sizing: border-box;
+}
 #heading{
   border: 2px solid black;
   text-align: center;
   padding: 3px ;
-  margin:  3px;
+  margin:  30px;
+  margin-bottom: 60px;
   background-color:  blueviolet;
   color: yellowgreen;
   font-size: 60px ;
@@ -19,6 +24,7 @@
   display: inline;
   margin: 10px;
   display: inline ;
+
 }
 
 
@@ -28,33 +34,54 @@ nav{
   padding: auto;
   display: inline ;
   display: grid;
-
+  width: 50%;
 }
 
 #container{
   border: 2px solid black;
   margin: 10px;
   padding: 10px;
+  display: block;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
-  </style>
+</style>
 </head>
 <div id="heading">An interactive to-do list </div>
 <nav>
-  <input type="text" id="addingtolist"  placeholder="enter the things to do"/>
-<button onclick="addingtolist()" id="addingtolistButton" > Add TO DO</button>
+    <input type="text" id="addingtolistID"  minlength="3" placeholder="enter the things to do"/>
+    <button onclick="addingtolist()" id="addingtolistButton" > Add TO DO</button>  
 </nav>
 
 
-
-
-
+<div id="container">
+</div>
 <body>
+  <script> 
+function addingtolist(){
+  const addingtolistID = document.getElementById("addingtolistID").value;
+  //alert(addingtolistID)
+  let container = document.getElementById("container");
+
+  let newitemCheckbox = document.createElement("input");
+  newitemCheckbox.type = "checkbox"
+  let newitempara = document.createElement("p");
+  newitempara.innerHTML = addingtolistID;
+  let newitemEditButton = document.createElement("button");
+  newitemEditButton.innerHTML = "Edit"
+  let newitemDeleteButton = document.createElement("button");
+  newitemDeleteButton.innerHTML= "Delete"
+  container.appendChild(newitemCheckbox)
+  container.appendChild(newitempara)
+  container.appendChild(newitemEditButton)
+  container.appendChild(newitemDeleteButton)
+  let a  = document.getElementById("addingtolistID")
+  a.value = ""
+
+}
 
 
-  <script>
-    
   </script>
 </body>
-
 </html>
