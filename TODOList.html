@@ -20,11 +20,15 @@
   color: yellowgreen;
   font-size: 60px ;
 }
-#addingtolistButton,#addingtolist{
+#addingtolistButton,#addingtolistID{
   display: inline;
   margin: 10px;
   display: inline ;
 
+}
+#addingtolistID{
+  height: 50px;
+  border: 1px solid black;
 }
 
 
@@ -46,6 +50,18 @@ nav{
   margin-right: 20%;
 }
 
+#container > p,input {
+  display: inline;
+ margin: 10px;
+ padding: 10px;
+}
+#container > button{
+  display: inline;
+ /*margin: 10px;*/
+ margin-left: 90%;
+}
+
+
 </style>
 </head>
 <div id="heading">An interactive to-do list </div>
@@ -65,20 +81,23 @@ function addingtolist(){
   let container = document.getElementById("container");
 
   let newitemCheckbox = document.createElement("input");
-  newitemCheckbox.type = "checkbox"
+  newitemCheckbox.type = "checkbox";
   let newitempara = document.createElement("p");
+  newitempara.id ="newitempara"
   newitempara.innerHTML = addingtolistID;
   let newitemEditButton = document.createElement("button");
-  newitemEditButton.innerHTML = "Edit"
+  newitemEditButton.innerHTML = "Edit";
+
   let newitemDeleteButton = document.createElement("button");
   newitemDeleteButton.innerHTML= "Delete"
   container.appendChild(newitemCheckbox)
-  container.appendChild(newitempara)
+  container.appendChild(newitempara)        
   container.appendChild(newitemEditButton)
   container.appendChild(newitemDeleteButton)
   let a  = document.getElementById("addingtolistID")
   a.value = ""
-
+  let b = document.createElement("br") ;
+  container.appendChild(b)
 }
 
 
