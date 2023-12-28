@@ -81,7 +81,6 @@ function addingtolist(){
   const addingtolistID = document.getElementById("addingtolistID").value;
   //alert(addingtolistID)
   let container = document.getElementById("container");
- let y="";
   let newitemCheckbox = document.createElement("input");
   newitemCheckbox.type = "checkbox";
   let newitempara = document.createElement("p");
@@ -89,18 +88,26 @@ function addingtolist(){
   newitempara.innerHTML = addingtolistID;
   let newitemEditButton = document.createElement("button");
   newitemEditButton.innerHTML = "Edit";
-
+  newitemEditButton.id = "Edit"
   let newitemDeleteButton = document.createElement("button");
-  newitemDeleteButton.innerHTML= "Delete"
+  newitemDeleteButton.innerHTML= "Delete";
+  newitemDeleteButton.id = "Delete";
   container.appendChild(newitemCheckbox)
   container.appendChild(newitempara)        
   container.appendChild(newitemEditButton)
   container.appendChild(newitemDeleteButton)
   let a  = document.getElementById("addingtolistID")
-  a.value = ""
+  a.value = "";
   let b = document.createElement("br") ;
-  container.appendChild(b)
+  container.appendChild(b);
 }
+
+let editTask = document.getElementById("Edit");
+editTask.addEventListener("click", function () {
+  alert("Hii")
+})
+
+
 
 
   </script>
